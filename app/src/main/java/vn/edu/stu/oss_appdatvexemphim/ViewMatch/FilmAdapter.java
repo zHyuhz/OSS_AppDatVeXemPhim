@@ -1,10 +1,6 @@
 package vn.edu.stu.oss_appdatvexemphim.ViewMatch;
 
 
-//Required type:
-//        vn.edu.stu.oss_appdatvexemphim.ViewMatch.OnItemClickListener
-//        Provided:
-//        android.widget.AdapterView.OnItemClickListener
 
 import android.content.Context;
 import android.view.LayoutInflater;
