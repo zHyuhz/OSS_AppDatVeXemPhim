@@ -4,6 +4,7 @@ import java.util.List;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
@@ -12,8 +13,13 @@ import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+<<<<<<< HEAD
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.AccountResponse;
+=======
+import vn.edu.stu.oss_appdatvexemphim.DTO.Request.LoginRequest;
+>>>>>>> a33be4325e2acdbe9e6fba8a4500dc7ac087f145
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.ApiResponse;
+import vn.edu.stu.oss_appdatvexemphim.DTO.Response.BookingResponse;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.MovieResponse;
 
 public interface ApiService {
@@ -46,6 +52,10 @@ public interface ApiService {
             @Query("movieLength") int movieLength,
             @Part MultipartBody.Part moviePoster
     );
+    @GET("/bookings")
+    Call<ApiResponse<List<BookingResponse>>> getAllBooking();
 
+    @POST("/auth/login")
+    Call<ApiResponse<Void>> login(@Body LoginRequest loginRequest);
 
 }
