@@ -13,6 +13,7 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.ApiResponse;
+import vn.edu.stu.oss_appdatvexemphim.DTO.Response.BookingResponse;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.MovieResponse;
 
 public interface ApiService {
@@ -43,6 +44,8 @@ public interface ApiService {
             @Query("movieLength") int movieLength,
             @Part MultipartBody.Part moviePoster
     );
+    @GET("/bookings")
+    Call<ApiResponse<List<BookingResponse>>> getAllBooking();
 
 
 }
