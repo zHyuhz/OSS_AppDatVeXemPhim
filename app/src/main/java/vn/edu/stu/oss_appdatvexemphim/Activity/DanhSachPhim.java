@@ -84,6 +84,9 @@ public class DanhSachPhim extends AppCompatActivity {
 //                Toast.makeText(this, "Quản lý phim được chọn", Toast.LENGTH_SHORT).show();
             } else if (id == R.id.nav_dangxuat) {
 
+            } else if (id == R.id.nav_QLVe) {
+                Intent intent = new Intent(DanhSachPhim.this, DanhSachVe.class);
+                startActivity(intent);
             }
             return true;
 
