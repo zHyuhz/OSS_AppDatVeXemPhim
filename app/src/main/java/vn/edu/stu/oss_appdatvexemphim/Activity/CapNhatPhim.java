@@ -90,24 +90,31 @@ public class CapNhatPhim extends AppCompatActivity {
 
     private void addEvents() {
         xulyImageButton();
-        btn_them.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MovieResponse movieResponse = new MovieResponse();
-                movieResponse.setMovieName(frmUpdate_edt_tenPhim.getText().toString());
-                movieResponse.setMovie_description(frmUpdate_edt_moTaPhim.getText().toString());
-                movieResponse.setMovie_genres(frmUpdate_edt_theLoaiPhim.getText().toString());
-                movieResponse.setMovie_release(FormatDate.formatDate(tv_valueDate.getText().toString()));
-                movieResponse.setMovie_length(Integer.parseInt(frmUpdate_edt_doDaiPhim.getText().toString()));
-                Bitmap bitmap = ((BitmapDrawable) frm_update_img.getDrawable()).getBitmap();
-                try {
-                    addMovieWithBitmap(bitmap, movieResponse.getMovieName(), movieResponse.getMovie_description(), movieResponse.getMovie_genres(),
-                            movieResponse.getMovie_release(), movieResponse.getMovie_length());
-                } catch (Exception e) {
 
+            btn_them.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                    MovieResponse movieResponse = new MovieResponse();
+                    movieResponse.setMovieName(frmUpdate_edt_tenPhim.getText().toString());
+                    movieResponse.setMovie_description(frmUpdate_edt_moTaPhim.getText().toString());
+                    movieResponse.setMovie_genres(frmUpdate_edt_theLoaiPhim.getText().toString());
+                    movieResponse.setMovie_release(FormatDate.formatDate(tv_valueDate.getText().toString()));
+                    movieResponse.setMovie_length(Integer.parseInt(frmUpdate_edt_doDaiPhim.getText().toString()));
+                    Bitmap bitmap = ((BitmapDrawable) frm_update_img.getDrawable()).getBitmap();
+                    try {
+                        addMovieWithBitmap(bitmap, movieResponse.getMovieName(), movieResponse.getMovie_description(), movieResponse.getMovie_genres(),
+                                movieResponse.getMovie_release(), movieResponse.getMovie_length());
+                    } catch (Exception e) {
+
+                    }
+                }catch (Exception e){
+                    Toast.makeText(CapNhatPhim.this,"VUI LÒNG THÊM HÌNH ẢNH PHIM",Toast.LENGTH_LONG).show();
                 }
-            }
-        });
+                }
+            });
+
+
         btn_chonAnh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

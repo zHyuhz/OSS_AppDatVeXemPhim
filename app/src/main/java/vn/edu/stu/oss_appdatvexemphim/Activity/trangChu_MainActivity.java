@@ -103,11 +103,12 @@ public class trangChu_MainActivity extends AppCompatActivity implements Navigati
         navigationView = findViewById(R.id.nav_menu_frmTrangChu);
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
-//            if (id == R.id.nav_trangchu) {
-//            } else if (id == R.id.nav_QLPhim) {
-//                Intent intent = new Intent(this, dsPhim_MainActivity.class);
-//                startActivity(intent);
-//            } else if (id == R.id.nav_dangxuat) {
+            if (id == R.id.nav_trangchu) {
+            } else if (id == R.id.nav_QLPhim) {
+                Intent intent = new Intent(this, DanhSachPhim.class);
+                startActivity(intent);
+            }
+//            else if (id == R.id.nav_dangxuat) {
 //                Intent intent = new Intent(trangChu_MainActivity.this, dangNhap_MainActivity.class);
 //                ROLE = "USER";
 //                startActivity(intent);
