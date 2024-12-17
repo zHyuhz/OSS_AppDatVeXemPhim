@@ -14,6 +14,7 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Request.LoginRequest;
+import vn.edu.stu.oss_appdatvexemphim.DTO.Response.AccountResponse;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.ApiResponse;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.BookingResponse;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.MovieResponse;
@@ -25,6 +26,8 @@ public interface ApiService {
     @GET("/movies")
         // Thay {id} bằng ID phim
     Call<ApiResponse<List<MovieResponse>>> getAllMovie();
+    @GET("/accounts/{username}")
+    Call<ApiResponse<AccountResponse>> findAccountByUsername(@Path("username") String username);
     @Multipart
     @PUT("/movies/{id}")
     Call<ApiResponse<MovieResponse>> updateMovie(
