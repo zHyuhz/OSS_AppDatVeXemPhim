@@ -19,37 +19,33 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".Activity.trangChu_MainActivity"
-=======
+            android:exported="false" >
+
+        </activity>
+
+        <activity
             android:name=".Activity.DangNhap"
->>>>>>> a33be4325e2acdbe9e6fba8a4500dc7ac087f145
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
-<<<<<<< HEAD
-=======
             android:name=".Activity.ChiTietVe"
             android:exported="false" />
         <activity
             android:name=".Activity.DanhSachVe"
             android:exported="false" />
         <activity
->>>>>>> a33be4325e2acdbe9e6fba8a4500dc7ac087f145
             android:name=".Activity.CapNhatPhim"
             android:exported="false" />
         <activity
             android:name=".Activity.DanhSachPhim"
-<<<<<<< HEAD
-            android:exported="true">
-=======
             android:exported="false">
->>>>>>> a33be4325e2acdbe9e6fba8a4500dc7ac087f145
 
         </activity>
         <activity
