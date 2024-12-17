@@ -10,8 +10,10 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Request.AccountUpdate;
 
+import vn.edu.stu.oss_appdatvexemphim.DTO.Request.UserRequest;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.AccountResponse;
 import vn.edu.stu.oss_appdatvexemphim.DTO.Response.ApiResponse;
+import vn.edu.stu.oss_appdatvexemphim.DTO.Response.UserResponse;
 
 public interface ApiService {
     @GET("/accounts/{username}")
@@ -26,5 +28,15 @@ public interface ApiService {
 
     @PUT("/accounts/{userName}")
     Call<ApiResponse<AccountResponse>> updateAccount(@Path("userName") String userName, @Body AccountUpdate accountUpdate);
+
+    @DELETE("/users/{id}")
+    Call<ApiResponse<String>> deleteUser(@Path("id") int user_id);
+
+    @GET("/users")
+    Call<ApiResponse<List<UserResponse>>> getAllUsers();
+    @PUT("/users/{id}")
+    Call<ApiResponse<UserResponse>> updateUsers(@Path("id") int id,
+                                                @Body UserRequest userRequest);
+
 
 }
