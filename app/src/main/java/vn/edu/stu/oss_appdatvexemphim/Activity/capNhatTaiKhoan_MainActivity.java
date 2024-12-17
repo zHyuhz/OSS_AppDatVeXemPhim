@@ -63,10 +63,12 @@ public class capNhatTaiKhoan_MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, dsTaiKhoan_MainActivity.class);
             startActivity(intent);
         });
-        xulyNhapEmail();
+
         frmChiTietTK_btn_Luu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+// Lỗi 1
+
                 AccountUpdate accountUpdate = new AccountUpdate();
                 accountUpdate.setEmail(edt_emails.getText().toString());
                 accountUpdate.setPassword(frmChiTietTK_edt_matKhau.getText().toString());
@@ -100,16 +102,15 @@ public class capNhatTaiKhoan_MainActivity extends AppCompatActivity {
         });
     }
 
-    private void xulyNhapEmail() {
-        edt_emails.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus) {
-                String email = edt_emails.getText().toString().trim();
-                if (!isValidGmail(email)) {
-                    edt_emails.setError("Email sai định dạng example@gmail.com");
-                }
-            }
-        });
+    private boolean xulyNhapEmail() {
+        String email = edt_emails.getText().toString().trim();
+        if (!isValidGmail(email)) {
+            edt_emails.setError("Email sai định dạng example@gmail.com");
+            return false;
+        }
+        return true;
     }
+
 
     private boolean isValidGmail(String email) {
         String emailPattern = "^[a-zA-Z0-9._%+-]+@gmail\\.com$";
